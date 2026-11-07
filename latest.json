@@ -1,5 +1,6 @@
 {
-  "version": "0.2.0",
-  "url": "/downloads/Billnotch.dmg",
+  "version": "0.3.0",
+  "url": "https://github.com/SEU-USUARIO/billnotch/releases/latest/download/Billnotch.dmg",
+  "sha256": "cd1bbdc23e53a430c82eedafd8c3aafdc7aee50ba896eb716930fd15678aca01",
   "notes": "Primeira versão pública."
 }

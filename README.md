@@ -60,7 +60,13 @@ O Billnotch não precisa de plugin nem de hook. Ele lê os registros que o Claud
 
 O app roda sem ícone no Dock. O ícone fica na barra de menus, e as configurações abrem por ali ou com o botão direito na aba. Para encerrar, use o botão de power do cartão.
 
+## Junto com o Editnotch
+
+Se o Billnotch e o Editnotch estiverem abertos ao mesmo tempo, as duas abas se juntam num notch só, na mesma borda: o Billnotch em cima (ou à esquerda) e o Editnotch embaixo (ou à direita). Mudar a borda ou arrastar com `⌥` em um move o outro, e abrir o cartão de um fecha o do outro. Eles combinam por avisos locais do sistema, sem rede.
+
 ## Atualizações
+
+Com o app em Aplicativos, ele baixa a versão nova em segundo plano, confere o SHA-256 (se informado) e troca o app quando você o encerra, ou na hora com **Reiniciar e atualizar**. Fora de Aplicativos, só avisa e abre o download.
 
 O app consulta, no máximo uma vez por dia, um arquivo JSON que **você** publica:
 
@@ -68,6 +74,7 @@ O app consulta, no máximo uma vez por dia, um arquivo JSON que **você** public
 {
   "version": "0.3.0",
   "url": "https://seusite.com/downloads/Billnotch.dmg",
+  "sha256": "(opcional) hash do DMG, gerado pelo make-dmg.sh",
   "notes": "O que mudou nesta versão."
 }
 ```
@@ -112,9 +119,17 @@ O app é assinado só de forma ad-hoc. Para distribuir sem aviso do macOS, assin
 | `SettingsView.swift`, `Settings.swift` | Janela de configurações e preferências |
 | `Updater.swift` | Verificação de atualização |
 
+## Contribuir
+
+Contribuições são bem-vindas: veja o [CONTRIBUTING.md](CONTRIBUTING.md). A regra principal é a privacidade: o app nunca lê o conteúdo das mensagens.
+
+## Site
+
+A pasta `site/` é uma landing page estática (HTML, CSS e JS, sem build). Para publicar na Vercel, importe a pasta `site`. O botão de download usa o endereço do campo `url` de `site/latest.json`, então aponte esse campo para o `.dmg` publicado em **GitHub Releases** (o DMG não vai no repositório).
+
 ## Licença
 
-Defina a licença do seu projeto aqui (por exemplo, MIT).
+[MIT](LICENSE).
 
 ---
 
